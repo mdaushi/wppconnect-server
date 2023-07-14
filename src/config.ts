@@ -1,11 +1,13 @@
+require('dotenv').config({ path: __dirname + './../../.env' });
+
 export default {
-  secretKey: 'THISISMYSECURETOKEN',
+  secretKey: process.env.SECRET_KEY,
   host: 'http://localhost',
-  port: '21465',
+  port: process.env.PORT || '21465',
   deviceName: 'WppConnect',
   poweredBy: 'WPPConnect-Server',
   startAllSession: true,
-  tokenStoreType: 'file',
+  tokenStoreType: process.env.TOKEN_STORE_TYPE,
   maxListeners: 15,
   customUserDataDir: './userDataDir/',
   webhook: {
